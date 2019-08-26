@@ -7,4 +7,4 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-I am a Statistical & Data Sciences Student at Smith College in Northampton, MA. 
+I am a Statistical & Data Sciences Student at Smith College in Northampton, MA, graduating in 2022.
