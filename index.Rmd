@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
   <summary>Posts</summary>
   
   ## Posts
-  [About Me](niannucci.github.io/about_me.Rmd)
+  [About Me](about_me.Rmd)
   [Blog Post]
   
 </details>
