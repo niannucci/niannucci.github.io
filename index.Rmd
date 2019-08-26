@@ -7,12 +7,14 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
 # collapsible heading at the top to link to other pages
+```
 <details>
-  <summary>Click to expand!</summary>
+  <summary>Posts</summary>
   
   ## Posts
-  [About Me](niannucci.github.io/about_me.html)
+  [About Me](niannucci.github.io/about_me.Rmd)
   [Blog Post]
   
 </details>
