@@ -1,0 +1,10 @@
+---
+title: "About Me"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I am a Statistical & Data Sciences Student at Smith College in Northampton, MA. 
