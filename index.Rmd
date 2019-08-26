@@ -1,5 +1,5 @@
 ---
-title: "Natalia Iannucci"
+title: "Data Science in the World"
 output: html_document
 ---
 
@@ -7,4 +7,19 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-I am a Statistical & Data Sciences Student at Smith College in Northampton, MA. 
+# collapsible heading at the top to link to other pages
+<details>
+  <summary>Click to expand!</summary>
+  
+  ## Posts
+  [About Me](niannucci.github.io/about_me.html)
+  [Blog Post]
+  
+</details>
+
+
+
+
+
+
+Why should we care about data science? It is a tool that lets us talk about real issues that are happening all around us every day. Here, I explore some important things that I think we are not talking enough about.
