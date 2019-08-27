@@ -1,0 +1,87 @@
+---
+title: "Why is Cable Media Obsessed with Joe Biden?"
+author: "By [Natalia Iannucci](about_me.html)"
+date: Agust 27, 2019
+output: 
+  html_document:
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(ggthemes)
+
+#Read in the CSV files for the data being used; this data is from a GitHub repository containing datasets used in FiveThirtyEight's articles. The data used in this post is about media mentions of democratic candiates for the 2020 presidential elections, used to compare weekly cable and online mentions of the various candidates.  
+
+cable_weekly <- read.csv(file = "https://raw.githubusercontent.com/fivethirtyeight/data/master/media-mentions-2020/cable_weekly.csv")
+
+online_weekly<- read.csv(file = "https://raw.githubusercontent.com/fivethirtyeight/data/master/media-mentions-2020/online_weekly.csv")
+```
+
+```{r message=FALSE, warning=FALSE}
+#create a new dataset called cable_names
+cable_names <- cable_weekly %>%
+  #group cable_weekly data by candidate name
+  group_by(name) %>%
+  #find the percentage that each candidate is mentioned out of all clips
+  summarize(total_perc = sum(pct_of_all_candidate_clips)) %>%
+  #order from canidate with highest percentage of mentions to lowest
+  arrange(desc(total_perc)) %>%
+  #show only top 8 candidates
+  top_n(8)
+
+```
+
+As the 2020 election quickly approaches and primary debates begin, news outlets are eager to discuss candidates. With current president Donald Trump running for a second term, he is the clear frontrunner for the Republican Party; however, there appear to be several candidates in a tight race for the democratic nominee. As candidates become more popular and therefore more relevant, one might assume that the most popular ones would be discussed most often by news outlets. With the modern day obsession that everyone seems to have with the internet, as anyone with a smartphone can access news in seconds no matter where they are, online news sources have become more prevelant. They have shifted from mainly sources of entertainent to developing into some reputable news sources, as cable channels such as CNN and Fox have shifted over to online news reporting as well as on cable television. 
+
+As online news becomes more ever increasingly more popular, I was curious to see if cable news networks' and online news sources' reporting were virtually the same, or if with a new medium for news came a different in what was being reported.
+
+```{r message=FALSE, warning=FALSE}
+#plot the cable_names data as a bargraph, with the explanatory variable being the candidate name and the response variable being the percentage of cable mentions that they have
+cable_plot <- ggplot(data = cable_names, aes(x = reorder(name, -total_perc), y = total_perc)) +
+  geom_bar(stat = "identity") +
+  ggtitle("Cable Reporting of Democratic Candidates", subtitle = "Who are Cable News Outlets Talking About Most?") +
+  xlab("Name of Candidate") +
+  ylab("Percentage of Mentions") +
+  theme_economist() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 0.6)) +
+  theme(axis.title.x = element_text(vjust = -1, size = 15)) +
+  theme(axis.title.y = element_text(size = 15)) +
+  geom_text(aes(label = sprintf("%0.1f", total_perc)), vjust = -0.3, size = 3)
+
+cable_plot
+```
+  
+  In the graph above, it is evident that Joe Biden has a signiicant lead in cable reporting, as his name is mentioned almost twice as often, being mentioned in almost 12% of candidate discussions, as compared to the candidate with the second highest percentage of mentions containing his name, Bernie Sanders.
+
+```{r message=FALSE, warning=FALSE}
+online_names <- online_weekly %>%
+  group_by(name) %>%
+  summarize(total_perc = sum(pct_of_all_candidate_stories)) %>%
+  arrange(desc(total_perc)) %>%
+  top_n(8)
+
+```
+
+```{r message=FALSE, warning=FALSE}
+online_plot <- ggplot(data = online_names, aes(x = reorder (name, -total_perc), total_perc)) +
+  geom_bar(stat = 'identity') +
+  ggtitle("Online Reporting of Democratic Candidates", subtitle = "Who Are Online Media Sources Talking About Most?") +
+  xlab("Name of Candidate") +
+  ylab("Percentage of Mentions") +
+  theme_economist() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 0.6)) +
+  theme(axis.title.x = element_text(vjust = -1, size = 15)) +
+  theme(axis.title.y = element_text(size = 15)) +
+  geom_text(aes(label = sprintf("%0.1f", total_perc)), vjust = -0.3, size = 3)
+
+online_plot
+```
+  
+  In this graph, however we can see that online media reports mention Bernie Sanders the most often. The trend of decreasing mentions with each consecutive candidate in this graph is significantly less drastic, and follows a more linear trend, compared to the steeper decrease between the first several candidates as reported by the cable outlets. Thus, online news sources report on the leading candidates much more evenly, with only differences of a few percent between the top few candidates. This also allows for candidates with less popularity to get some media coverage, as opposed to cable news who disproportionately focus on the top two, leaving very little of their mentions to candidates such as Harris and Booker, who both recieved over 5% of online mentions as opposed to under 5% of cable mentions.  
+  
+  Some candidates, such as O'Rourke and Gillibrand, fall within the top eight most mentioned candiadtes on only one platform; O'Rourke in cable reports, and Gillibrand in online reports. Joe Biden is reported third most often in online news, a stark difference to his significant lead in cable reports.
