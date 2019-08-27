@@ -15,4 +15,4 @@ I have taken SDS192 Introduction to Data Science, in which I learned and coding 
 
 This semester (Fall 2019), I am taking SDS291 Multiple Regression, SDS390 Topics in Data Science: Programming for Data Science, and MTH112 Calculus II.
 
-You can find me on GitHub @niannucci, where I have repositories containing more of my work, including assignments and projects from my college courses, as well as the documentation and code for creating this website.
+You can find me on GitHub @niannucci, where I have repositories containing more of my work, including assignments and projects from my college courses, as well as the documentation and code for creating this website. I can also be found on [LinkedIn](https://www.linkedin.com/in/iannuccinatalia/).
