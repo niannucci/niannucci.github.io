@@ -1,13 +1,15 @@
 ---
 title: "Learning Data Science"
-output: html_document
+output: 
+  html_document:
+    code_folding: hide
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r echo = FALSE}
+```{r essage=FALSE, warning=FALSE}
 # collapsible heading at the top to link to other pages
 ```
 <details>
