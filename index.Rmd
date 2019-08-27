@@ -1,5 +1,5 @@
 ---
-title: "Data Science in the World"
+title: "Learning Data Science"
 output: html_document
 ---
 
@@ -7,21 +7,23 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+```{r echo = FALSE}
 # collapsible heading at the top to link to other pages
 ```
 <details>
   <summary>Posts</summary>
+
+  [About Me](about_me.html)  
   
-  ## Posts
-  [About Me](about_me.html)
-  [Blog Post]
+  [Why is Cable Media Obsessed with Joe Biden?](blog_post_one.html)
   
-</details>
+</details>  
 
 
+As a data science student, [I](about_me.html) am constantly learning. With every class I take I am learning more technical skills, especially as I get into the nitty-gritty of coding. However, I am also in the process of learning soft skills along the way; being able to compute statistical analyses and create data visualizations is of little use without the knowledge of how to interpret this information. 
 
 
+As a means to help me to continue strengthening my data analysis and data journalism skills, I have started this blog, where I will be posting articles discussing data analyses that I do in my free time as well as discussing what I am learning as I enter the field of data science.
 
 
-Why should we care about data science? It is a tool that lets us talk about real issues that are happening all around us every day. Here, I explore some important things that I think we are not talking enough about.
+Why should we care about data science? It is a tool that lets us talk about real issues that are happening all around us every day. Here, I explore some important things that I think we are not talking enough about. Explore some of my posts at the top to learn more. 
