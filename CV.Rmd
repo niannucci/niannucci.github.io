@@ -1,0 +1,29 @@
+---
+title: "CV"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r label, echo=FALSE, message=FALSE, warning=FALSE, out.width="85%"}
+library(knitr)
+#include_graphics("/Users/NataliaIannucci_1/Desktop/CV_april11.pdf")
+#Alternative, using explicit LaTeX commands.
+
+#\begin{figure}
+#\includegraphics[page=1,width=0.5\linewidth]{/Users/NataliaIannucci_1/Desktop/CV_april11.pdf}
+#\includegraphics[page=2,width=0.5\linewidth]{/Users/NataliaIannucci_1/Desktop/CV_april11.pdf}
+#\caption{\label{fig:test} Test.}
+#\end{figure}
+
+```
+
+
+\includepdf[pages=1-3,pagecommand={}, scale = 0.9]{/Users/NataliaIannucci_1/Desktop/CV_april11.pdf}
+
+<object data="/Users/NataliaIannucci_1/Desktop/CV_april11.pdf" width="750px" height="750px">
+    <embed src="/Users/NataliaIannucci_1/Desktop/CV_april11.pdf">
+    </embed>
+</object>
